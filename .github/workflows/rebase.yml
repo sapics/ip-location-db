@@ -1,0 +1,27 @@
+name: delete all histories by rebase
+
+on:
+  schedule:
+    - cron: '32 6 * * 1'
+
+jobs:
+  release:
+    name: delete all histories by rebase
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: rebase
+        shell: bash
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout --orphan temp_branch
+          git add -A
+          git commit -am "Initial rebased commit"
+          git branch -D master
+          git branch -m master
+          git push -f origin master
+        env:
+          GITHUB_TOKEN: ${{secrets.GTOKEN}}
