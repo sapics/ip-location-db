@@ -33,7 +33,7 @@ You can get the `country name, capital, continent, currency, languages, etc.` fr
 - `ipv6`: The csv line `2001:200::,2001:200:ffff:ffff:ffff:ffff:ffff:ffff,JP` means that ip addresses between `2001:200::` and `2001:200:ffff:ffff:ffff:ffff:ffff:ffff` inclusive are `JP` country_code.
 - `ipv6-num`: The csv line `42540528726795050063891204319802818560,42540528806023212578155541913346768895,JP` means that ip addresses between `2001:200::` and `2001:200:ffff:ffff:ffff:ffff:ffff:ffff` inclusive are `JP` country_code. (`42540528726795050063891204319802818560` is the number format of the ip address `2001:200::`)
 
-Please be careful when using `ipv6` and `ipv6-num` in your program. The numerical value exceeds 32bit unsigned integer, so you need to use 64bit unsigned integer.
+Please be careful when using `ipv6` and `ipv6-num` in your program. The numerical value exceeds 32bit unsigned integer, you would need to use a 128bit unsigned integer.
 
 
 ## Databases referenced in this project
