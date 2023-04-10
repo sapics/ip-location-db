@@ -140,3 +140,13 @@ License depends on the database which you use. Please read carefully each databa
 You can use [PDDL](https://opendatacommons.org/licenses/pddl/1.0/) (ODC Public Domain Dedication and Licence) or [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed) (Creative Commons Zero) licensed database without attribution for any purpose.
 
 We are glad if you make a link to [sapics/ip-location-db](https://github.com/sapics/ip-location-db), or give us a star to [the github repository](https://github.com/sapics/ip-location-db).
+
+
+
+## Tools & Applications
+
+Here is a list of tools and applications that can work with these databases:
+- [`realchandan/Ip-geo-API`](https://github.com/realchandan/Ip-geo-API): Go written HTTP server for IPv4 and IPv6 lookups.
+- [`EP-u-NW/ip_location_server`](https://github.com/EP-u-NW/ip_location_server): A GRPC and HTTP server mapping IP addresses to locations. Supports IPv4 and IPv6 and automatic dataset updates.
+
+If you know some more, feel free to append it to the list and open a pull request.
