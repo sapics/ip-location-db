@@ -1,0 +1,25 @@
+{
+  "name": "@ip-location-db/geolite2-city-7z",
+  "version": "2.3.2024011019",
+  "description": "Ip to location database",
+  "keywords": [
+    "ip",
+    "ip-location",
+    "ip-location-db",
+    "ipv4",
+    "ipv6",
+    "location",
+    "city",
+    "country"
+  ],
+  "license": "SEE LICENSE IN GEOLITE2_LICENSE AND GEOLITE2_EULA",
+  "author": "sapics",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sapics/ip-location-db"
+  }
+}
