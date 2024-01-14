@@ -147,6 +147,7 @@ Here is a list of tools and applications that can work with these databases:
 - [`safing/mmdbmeld`](https://github.com/safing/mmdbmeld): Create and customize MMDB file from this database.
 - [`realchandan/Ip-geo-API`](https://github.com/realchandan/Ip-geo-API): Go written HTTP server for IPv4 and IPv6 lookups.
 - [`EP-u-NW/ip_location_server`](https://github.com/EP-u-NW/ip_location_server): A GRPC and HTTP server mapping IP addresses to locations. Supports IPv4 and IPv6 and automatic dataset updates.
+- [`IPInfoOffline`](https://www.nirsoft.net/utils/ip_country_info_offline.html): Allows you to view information about IP addresses, without connecting any external server.
 
 If you know some more, feel free to append it to the list and open a pull request.
 
