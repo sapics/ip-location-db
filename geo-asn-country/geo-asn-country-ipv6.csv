@@ -5052,7 +5052,6 @@
 2001:df0:4dc0::,2001:df0:4dc0:ffff:ffff:ffff:ffff:ffff,ID
 2001:df0:4e00::,2001:df0:4e00:ffff:ffff:ffff:ffff:ffff,TW
 2001:df0:4e40::,2001:df0:4e40:ffff:ffff:ffff:ffff:ffff,BD
-2001:df0:4e80::,2001:df0:4e80:ffff:ffff:ffff:ffff:ffff,IN
 2001:df0:4ec0::,2001:df0:4ec0:ffff:ffff:ffff:ffff:ffff,IN
 2001:df0:4f40::,2001:df0:4f40:ffff:ffff:ffff:ffff:ffff,BD
 2001:df0:4f80::,2001:df0:4f80:ffff:ffff:ffff:ffff:ffff,BD
@@ -10789,7 +10788,9 @@
 2001:3200::,2001:3207:ffff:ffff:ffff:ffff:ffff:ffff,GB
 2001:3300::,2001:3307:ffff:ffff:ffff:ffff:ffff:ffff,GB
 2001:3400::,2001:3407:ffff:ffff:ffff:ffff:ffff:ffff,AZ
+2001:3500::,2001:3507:ffff:ffff:ffff:ffff:ffff:ffff,US
 2001:3600::,2001:3607:ffff:ffff:ffff:ffff:ffff:ffff,SK
+2001:3700::,2001:3707:ffff:ffff:ffff:ffff:ffff:ffff,LU
 2001:3800::,2001:3807:ffff:ffff:ffff:ffff:ffff:ffff,AL
 2001:3a00::,2001:3a07:ffff:ffff:ffff:ffff:ffff:ffff,DE
 2001:3c00::,2001:3c07:ffff:ffff:ffff:ffff:ffff:ffff,AZ
@@ -14173,6 +14174,7 @@
 2401:b780::,2401:b780:ffff:ffff:ffff:ffff:ffff:ffff,MY
 2401:b7a0::,2401:b7a0:ffff:ffff:ffff:ffff:ffff:ffff,AU
 2401:b7c0::,2401:b7c0:ffff:ffff:ffff:ffff:ffff:ffff,CN
+2401:b7e0::,2401:b7e0:ffff:ffff:ffff:ffff:ffff:ffff,AU
 2401:b800::,2401:b800:ffff:ffff:ffff:ffff:ffff:ffff,VN
 2401:b840::,2401:b840:ffff:ffff:ffff:ffff:ffff:ffff,IN
 2401:b880::,2401:b880:ffff:ffff:ffff:ffff:ffff:ffff,AU
@@ -20392,6 +20394,7 @@
 2602:819:c000::,2602:819:c0ff:ffff:ffff:ffff:ffff:ffff,US
 2602:819:e000::,2602:819:e00f:ffff:ffff:ffff:ffff:ffff,US
 2602:819:f000::,2602:819:f0ff:ffff:ffff:ffff:ffff:ffff,US
+2602:f853::,2602:f853:ff:ffff:ffff:ffff:ffff:ffff,US
 2602:f854::,2602:f854:ff:ffff:ffff:ffff:ffff:ffff,US
 2602:f855::,2602:f855:fff:ffff:ffff:ffff:ffff:ffff,US
 2602:f856::,2602:f856:ff:ffff:ffff:ffff:ffff:ffff,US
@@ -41510,9 +41513,7 @@
 2a00:11c0:9a::,2a00:11c0:9a:ffff:ffff:ffff:ffff:ffff,PE
 2a00:11c0:9b::,2a00:11c0:dd:ffff:ffff:ffff:ffff:ffff,AT
 2a00:11c0:de::,2a00:11c0:de:ffff:ffff:ffff:ffff:ffff,CA
-2a00:11c0:df::,2a00:11c0:ff:ffff:ffff:ffff:ffff:ffff,AT
-2a00:11c0:100::,2a00:11c0:100:ffff:ffff:ffff:ffff:ffff,LB
-2a00:11c0:101::,2a00:11c0:1333:ffff:ffff:ffff:ffff:ffff,AT
+2a00:11c0:df::,2a00:11c0:1333:ffff:ffff:ffff:ffff:ffff,AT
 2a00:11c0:1334::,2a00:11c0:1334:ffff:ffff:ffff:ffff:ffff,US
 2a00:11c0:1335::,2a00:11c0:1335:ffff:ffff:ffff:ffff:ffff,TR
 2a00:11c0:1336::,2a00:11c0:1797:ffff:ffff:ffff:ffff:ffff,AT
