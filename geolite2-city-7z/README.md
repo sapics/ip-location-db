@@ -21,7 +21,7 @@
 This project provides ip to location database in csv format. If you need MMDB format, please use [mmdbmeld](https://github.com/safing/mmdbmeld).
 
 #### ASN csv format
-`ip_range_start, ip_range_end, as_number, as_organization`
+`ip_range_start, ip_range_end, autonomous_system_number, autonomous_system_organization`
 
 #### Country csv format
 `ip_range_start, ip_range_end, country_code`
@@ -29,8 +29,8 @@ This project provides ip to location database in csv format. If you need MMDB fo
 #### City csv format
 `ip_range_start, ip_range_end, country_code, state1, state2, city, postcode, latitude, longitude, timezone`
 
-#### as_number
-`as_number` is a unique number assigned to an Autonomous System (AS) by the [IANA](https://www.iana.org/). [wiki](https://wikipedia.org/wiki/Autonomous_system_(Internet)).
+#### autonomous_system_number
+`autonomous_system_number` is a unique number assigned to an Autonomous System (AS) by the [IANA](https://www.iana.org/). [wiki](https://wikipedia.org/wiki/Autonomous_system_(Internet)).
 
 ##### country_code
 `country_code` is the two-letter code defined in [ISO 3166-1 alpha-2](https://wikipedia.org/wiki/ISO_3166-1_alpha-2).
@@ -145,8 +145,10 @@ For example, we can use [maxmind developed libraries](https://github.com/maxmind
 
 Here is a list of tools and applications that can work with these databases:
 - [`safing/mmdbmeld`](https://github.com/safing/mmdbmeld): Create and customize MMDB file from this database.
+- [`paul-norman/ip-location-to-mmdb`](https://github.com/paul-norman/ip-location-to-mmdb): Direct covertion to MMDB file from this dastabase.
 - [`realchandan/Ip-geo-API`](https://github.com/realchandan/Ip-geo-API): Go written HTTP server for IPv4 and IPv6 lookups.
 - [`EP-u-NW/ip_location_server`](https://github.com/EP-u-NW/ip_location_server): A GRPC and HTTP server mapping IP addresses to locations. Supports IPv4 and IPv6 and automatic dataset updates.
+- [`paul-norman/ip-location-api`](https://github.com/paul-norman/ip-location-api): Go written API server for IPv4 and IPv6 with MMDB, PostgreSQL, MySQL, MariaDB and SqLite.
 - [`IPInfoOffline`](https://www.nirsoft.net/utils/ip_country_info_offline.html): Allows you to view information about IP addresses, without connecting any external server.
 
 If you know some more, feel free to append it to the list and open a pull request.
