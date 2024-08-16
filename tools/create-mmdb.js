@@ -18,8 +18,8 @@ var run = function(){
 		// var confFile = path.join(__dirname, 'conf', nonMmdbDir + '.yml')
 		var inputV4 = path.join(topDir, nonMmdbDir, nonMmdbDir + '-ipv4.csv')
 		var inputV6 = path.join(topDir, nonMmdbDir, nonMmdbDir + '-ipv6.csv')
-		var outputV4 = path.join(topDir, dir, dir + '-ipv4.mmdb')
-		var outputV6 = path.join(topDir, dir, dir + '-ipv6.mmdb')
+		var outputV4 = path.join(topDir, dir, nonMmdbDir + '-ipv4.mmdb')
+		var outputV6 = path.join(topDir, dir, nonMmdbDir + '-ipv6.mmdb')
 		console.log(dir)
 		for(var recordSize of [24, 28]){
 			try{
