@@ -19,11 +19,11 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.22.x'
-      - name: Copy ip-location-to-mmdb
+      - name: Download ip-location-to-mmdb
         shell: bash
         run: |
-          wget https://github.com/sapics/ip-location-to-mmdb/releases/download/v0.0.3/ip-location-to-mmdb-linux-x64.bin
-          chmod +x ip-location-to-mmdb-linux-x64.bin
+          wget https://github.com/sapics/ip-location-to-mmdb/releases/download/v0.0.3/ip-location-to-mmdb-linux-x64.bin -q -O /home/runner/work/ip-location-db/ip-location-db/ip-location-to-mmdb-linux-x64.bin
+          chmod +x /home/runner/work/ip-location-db/ip-location-db/ip-location-to-mmdb-linux-x64.bin
       - name: Copy package.json and README.md
         shell: bash
         run: node tools/copy-package-readme.js

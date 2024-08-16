@@ -2,13 +2,13 @@ const fs = require('fs')
 const path = require('path')
 const execSync = require('child_process').execSync
 const isWin = process.platform === 'win32'
-const mmdbCmd = 'ip-location-to-mmdb-' + (isWin ? 'windows' : 'linux') + '-x64.' + (isWin ? 'exe' : 'bin')
+const topDir = path.resolve(__dirname, '..')
+const mmdbCmd = path.join(topDir, 'ip-location-to-mmdb-' + (isWin ? 'windows-x64.exe' : 'linux-x64.bin'))
 
 var run = function(){
 	var cmd = 'git diff --name-only --diff-filter=M'
 	var changedFiles = execSync(cmd, {encoding: 'utf-8'}).split(/\r?\n/)
 	var packageFiles = changedFiles.filter(p => p.endsWith('package.json') && p.includes('-mmdb'))
-	var topDir = path.resolve(__dirname, '..')
 	var dirs = packageFiles.map(p => path.dirname(p))
 	if(process.argv.includes('--all')){
 		dirs = fs.readdirSync(topDir).filter(p => p.includes('-mmdb'))
@@ -28,7 +28,7 @@ var run = function(){
 					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, nonMmdbDir) + ' ' + inputV4 + '.gz')
 					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, nonMmdbDir) + ' ' + inputV6 + '.gz')
 				}
-				execSync(mmdbCmd + ' -i ' + inputV4 + ' -o ' + outputV4 + ' -r ' + (dir.includes('dbip-city') ? 28 :  recordSize))
+				execSync(mmdbCmd + ' -i ' + inputV4 + ' -o ' + outputV4 + ' -r ' + (dir.includes('dbip-city') ? 28 : recordSize))
 				execSync(mmdbCmd + ' -i ' + inputV6 + ' -o ' + outputV6 + ' -r ' + recordSize)
 				if(dir.includes('-city')){
 					fs.unlinkSync(path.join(topDir, nonMmdbDir, nonMmdbDir + '-ipv4.csv'))
