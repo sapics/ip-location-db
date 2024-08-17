@@ -13,6 +13,10 @@ do
 		if ! git diff --quiet HEAD -- *.mmdb; then
 			npm publish
 			git add .
+		else if [ -z "${PUBLISH_ALL_MMDB}" ] ; then
+			npm publish
+			cd $curdir
+			git checkout HEAD -- ${bdir}
 		else
 			cd $curdir
 			git checkout HEAD -- ${bdir}
@@ -24,7 +28,7 @@ do
 done
 
 cd $curdir
-cd dist
+
 git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git config --local user.name "github-actions[bot]"
-git commit -m "mmdb update"
+git commit -m "Mmdb Auto Update"
