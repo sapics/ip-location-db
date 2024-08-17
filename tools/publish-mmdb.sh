@@ -13,10 +13,8 @@ do
 		if ! git diff --quiet HEAD -- *.mmdb; then
 			npm publish
 			git add .
-		else if [ -z "${PUBLISH_ALL_MMDB}" ] ; then
+		elif [ -n "${PUBLISH_ALL_MMDB}" ] ; then
 			npm publish
-			cd $curdir
-			git checkout HEAD -- ${bdir}
 		else
 			cd $curdir
 			git checkout HEAD -- ${bdir}

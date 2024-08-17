@@ -5,13 +5,17 @@ on:
 
 jobs:
   build:
-    name: Create mmdb files
+    name: Publish mmdb files
     runs-on: ubuntu-latest
-    environment: production
     timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Publish to npm
         run: tools/publish-mmdb.sh
         env:
