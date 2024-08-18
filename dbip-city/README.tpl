@@ -1,0 +1,24 @@
+# `dbip-city`
+
+${blurb-dbip-city}
+
+${explanation-city}
+
+## Download
+
+${download-table-header}
+${download-table-dbip-city}
+
+## Related Downloads
+
+${download-table-header}
+${download-table-dbip-country}
+${download-table-dbip-asn}
+
+## Format Explanation
+
+${format-explanation-city-csv}
+
+## Licensing Requirements
+
+${licence-dbip}
