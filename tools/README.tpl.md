@@ -89,7 +89,7 @@ If you wish to create your own MMDB files from the CSV files *(to customise thei
 
 | Library | Language | Description | Types | Auto<br>Updates |
 |---|---|---|---|---|
-|[geoip-country](https://github.com/sapics/geoip-country) | Node.js | Fast ip to country lookup by using in-memory database. (requires 10MB RAM) | `country` | ✓ |
+|[ip-location-api](https://github.com/sapics/ip-location-api) | Node.js | Fast ip to country lookup by using in-memory database (7MB RAM) | `country` | ✓ |
 
 
 ## Useful applications
