@@ -1,0 +1,48 @@
+name: Create mmdb files
+
+on:
+  push:
+    branches:
+      - main
+      - main-test
+
+jobs:
+  build:
+    name: Create mmdb files
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'Daily Update')
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Setup golang
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.x'
+      - name: Download ip-location-to-mmdb
+        shell: bash
+        run: |
+          wget https://github.com/sapics/ip-location-to-mmdb/releases/download/v0.0.3/ip-location-to-mmdb-linux-x64.bin -q -O /home/runner/work/ip-location-db/ip-location-db/ip-location-to-mmdb-linux-x64.bin
+          chmod +x /home/runner/work/ip-location-db/ip-location-db/ip-location-to-mmdb-linux-x64.bin
+      - name: Copy package.json and README.md
+        shell: bash
+        run: node tools/copy-package-readme.js
+      - name: Update mmdb files
+        shell: bash
+        run: node tools/create-mmdb.js
+      - name: Publish to npm
+        run: tools/publish-mmdb.sh
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GTOKEN}}
+      - name: push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.GTOKEN}}
+          repository: sapics/ip-location-db
+          branch: main
