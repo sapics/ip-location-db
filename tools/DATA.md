@@ -58,12 +58,12 @@ autonomous_system_number, autonomous_system_organization
 
 --- ${format-city-csv} ---
 ```CSV
-ip_range_start, ip_range_end, country_code, city, state1, state2, latitude, longitude, postcode, timezone
+ip_range_start, ip_range_end, country_code, city, state1, state2, postcode, latitude, longitude, timezone
 ```
 
 --- ${format-city-mmdb} ---
 ```
-country_code, city, state1, state2, latitude, longitude, postcode, timezone
+country_code, city, state1, state2, postcode, latitude, longitude, timezone
 ```
 
 --- ${explanation-country} ---
@@ -166,9 +166,9 @@ city
 country_code
 state1
 state2
+postcode
 latitude
 longitude
-postcode
 timezone
 ```
 
