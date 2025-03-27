@@ -1,0 +1,27 @@
+{
+  "name": "@ip-location-db/geolite2-country",
+  "version": "2.3.2025032618",
+  "description": "Ip to location database",
+  "keywords": [
+    "ip",
+    "ip-location",
+    "ip-location-db",
+    "ipv4",
+    "ipv6",
+    "location",
+    "country"
+  ],
+  "license": "SEE LICENSE IN GEOLITE2_LICENSE AND GEOLITE2_EULA",
+  "author": "sapics",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sapics/ip-location-db.git"
+  },
+  "CUSTOME_FIELDS": {
+    "geolite2_hash_country": "c8a2ca635a023afc7564e7fb237b9b7a0817704431ee8027cb1f7a465094298b"
+  }
+}
