@@ -10,7 +10,7 @@
 ## CSV Format
 
 ```CSV
-ip_range_start, ip_range_end, country_code, city, state1, state2, latitude, longitude, postcode, timezone
+ip_range_start, ip_range_end, country_code, city, state1, state2, postcode, latitude, longitude, timezone
 ```
 `ip_range_start` and `ip_range_end` are either IP addresses, or IP addresses in numeric format *(depending upon which files you choose)* and these two fields represent an **inclusive** range of IP addresses for that data row.
 
