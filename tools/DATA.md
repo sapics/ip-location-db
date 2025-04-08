@@ -24,6 +24,11 @@ Created from the databases provided by [Webnet77](http://software77.net/geo-ip/)
 Created from the databases provided by [IPtoASN](https://iptoasn.com/).
 --- ${blurb-iptoasn-country} ---
 Created from the databases provided by [IPtoASN](https://iptoasn.com/).
+--- ${blurb-iplocate-asn} ---
+Created from the databases provided by [IPLocate](https://www.iplocate.io/).
+--- ${blurb-iplocate-country} ---
+Created from the databases provided by [IPLocate](https://www.iplocate.io/).
+
 
 --- ${field-explanation-asn} ---
 ### autonomous_system_number
@@ -203,6 +208,10 @@ Please be careful when using IPv6 and IPv6-num files in your program, the numeri
 | [IPtoASN](https://github.com/sapics/ip-location-db/tree/main/iptoasn-country/)<br><br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/iptoasn-country?color=success&style=flat-square&label=CSV)](https://www.npmjs.com/package/@ip-location-db/iptoasn-country)<br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/iptoasn-country-mmdb?color=success&style=flat-square&label=MMDB)](https://www.npmjs.com/package/@ip-location-db/iptoasn-country-mmdb) | Country | [PDDL](https://opendatacommons.org/licenses/pddl/1.0/) by [IPtoASN](https://iptoasn.com/) | Daily | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iptoasn-country/iptoasn-country-ipv4.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/iptoasn-country-mmdb/iptoasn-country-ipv4.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iptoasn-country/iptoasn-country-ipv6.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/iptoasn-country-mmdb/iptoasn-country-ipv6.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iptoasn-country/iptoasn-country-ipv4-num.csv) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iptoasn-country/iptoasn-country-ipv6-num.csv) |
 --- ${download-table-webnet77-country} ---
 | [Webnet77](https://github.com/sapics/ip-location-db/tree/main/webnet77-country/)<br><br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/webnet77-country?color=success&style=flat-square&label=CSV)](https://www.npmjs.com/package/@ip-location-db/webnet77-country)<br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/webnet77-country-mmdb?color=success&style=flat-square&label=MMDB)](https://www.npmjs.com/package/@ip-location-db/webnet77-country-mmdb) | Country | [Donationware](http://en.wikipedia.org/wiki/Donationware) by [Webnet77](http://software77.net/geo-ip/) | Daily | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/webnet77-country/webnet77-country-ipv4.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/webnet77-country-mmdb/webnet77-country-ipv4.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/webnet77-country/webnet77-country-ipv6.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/webnet77-country-mmdb/webnet77-country-ipv6.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/webnet77-country/webnet77-country-ipv4-num.csv) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/webnet77-country/webnet77-country-ipv6-num.csv) |
+--- ${download-table-iplocate-country} ---
+| [iplocate](https://github.com/sapics/ip-location-db/tree/main/iplocate-country/)<br><br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/iplocate-country?color=success&style=flat-square&label=CSV)](https://www.npmjs.com/package/@ip-location-db/iplocate-country)<br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/iplocate-country-mmdb?color=success&style=flat-square&label=MMDB)](https://www.npmjs.com/package/@ip-location-db/iplocate-country-mmdb) | Country | [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) by [IPLocate](https://www.iplocate.io/) | Daily | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-country/iplocate-country-ipv4.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-country-mmdb/iplocate-country-ipv4.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-country/iplocate-country-ipv6.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-country-mmdb/iplocate-country-ipv6.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-country/iplocate-country-ipv4-num.csv) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-country/iplocate-country-ipv6-num.csv) |
+--- ${download-table-iplocate-asn} ---
+| [iplocate](https://github.com/sapics/ip-location-db/tree/main/iplocate-asn/)<br><br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/iplocate-asn?color=success&style=flat-square&label=CSV)](https://www.npmjs.com/package/@ip-location-db/iplocate-asn)<br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/iplocate-asn-mmdb?color=success&style=flat-square&label=MMDB)](https://www.npmjs.com/package/@ip-location-db/iplocate-asn-mmdb) | ASN | [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) by [IPLocate](https://www.iplocate.io/) | Daily | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-asn/iplocate-asn-ipv4.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-asn-mmdb/iplocate-asn-ipv4.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-asn/iplocate-asn-ipv6.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-asn-mmdb/iplocate-asn-ipv6.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-asn/iplocate-asn-ipv4-num.csv) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/iplocate-asn/iplocate-asn-ipv6-num.csv) |
 --- ${download-table-dbip-geo-whois-asn-country} ---
 | [DB-IP Lite + GeoFeed + Whois + ASN](https://github.com/sapics/ip-location-db/tree/main/dbip-geo-whois-asn-country/)<br><br>[![npm version](https://img.shields.io/npm/v/@ip-location-db/dbip-geo-whois-asn-country?color=success&style=flat-square&label=CSV)](https://www.npmjs.com/package/@ip-location-db/dbip-geo-whois-asn-country)| Country | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) <br> by [DB-IP](https://db-ip.com/) | Monthly | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-geo-whois-asn-country/dbip-geo-whois-asn-country-ipv4.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-geo-whois-asn-country-mmdb/dbip-geo-whois-asn-country-ipv4.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-geo-whois-asn-country/dbip-geo-whois-asn-country-ipv6.csv)<br>[MMDB](https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-geo-whois-asn-country-mmdb/dbip-geo-whois-asn-country-ipv6.mmdb) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-geo-whois-asn-country/dbip-geo-whois-asn-country-ipv4-num.csv) | [CSV](https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-geo-whois-asn-country/dbip-geo-whois-asn-country-ipv6-num.csv) |
 --- ${download-table-dbip-country} ---
@@ -281,6 +290,17 @@ This is licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0
 You can download hourly updated database in tsv format from [original site](https://iptoasn.com/).
 This is licensed under a [Public Domain Dedication and License v1.0](https://opendatacommons.org/licenses/pddl/1.0/).
 There are some differences from above `ASN` database.
+
+
+--- ${explanation-db-iplocate} ---
+
+### [IPLocate](https://www.iplocate.io/) database [Update: Daily]
+
+You can download the original databases and read license from github repository [iplocate/ip-address-databases](https://github.com/iplocate/ip-address-databases).
+
+These databases are licensed under a [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), so **you must give appropriate credit by providing a link to [IPLocate.io](https://www.iplocate.io/) on your application, product, or website where the data is used**.
+
+If you need more detailed information (ex. City Name/Latitude/Longitude/etc.), please use the [premium databases](https://www.iplocate.io/products/downloadable-databases).
 
 
 --- ${explanation-db-dbip} ---
@@ -363,3 +383,7 @@ These databases are subject to Maxmind's End User License Agreement ([EULA](http
 If you need better accuracy, no attribution or daily updates, please use the relevant commercial version: [GeoIp®](https://www.maxmind.com/en/geoip-databases).
 --- ${license-webnet77} ---
 These files are provided as [Donationware](http://en.wikipedia.org/wiki/Donationware) by [Webnet77](http://software77.net/geo-ip/).
+--- ${license-iplocate} ---
+IPLocate databases are licensed under a [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license, so you must give appropriate credit by providing a link to [IPLocate.io](https://www.iplocate.io/) on your application, product, or website where the data is used.
+
+If you need more detailed information (ex. City Name/Latitude/Longitude/etc.), please use [premium databases](https://www.iplocate.io/products/downloadable-databases).

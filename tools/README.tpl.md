@@ -13,6 +13,7 @@ ${download-table-asn-country}
 ${download-table-geo-asn-country}
 ${download-table-geo-whois-asn-country}
 ${download-table-iptoasn-country}
+${download-table-iplocate-country}
 ${download-table-dbip-country}
 ${download-table-dbip-geo-whois-asn-country}
 ${download-table-geolite2-country}
@@ -34,6 +35,7 @@ ${format-asn-csv}
 ${download-table-header}
 ${download-table-asn}
 ${download-table-iptoasn-asn}
+${download-table-iplocate-asn}
 ${download-table-dbip-asn}
 ${download-table-geolite2-asn}
 
@@ -56,6 +58,8 @@ ${explanation-db-geo}
 ${explanation-db-routeviews}
 
 ${explanation-db-iptoasn}
+
+${explanation-db-iplocate}
 
 ${explanation-db-dbip}
 
