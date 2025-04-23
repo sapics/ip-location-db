@@ -186,6 +186,7 @@ If you wish to create your own MMDB files from the CSV files *(to customise thei
 |[ip-location-api](https://github.com/paul-norman/ip-location-api) | Go | API server creating / supporting MMDB, PostgreSQL, MySQL / MariaDB and SQLite | `country`<br>`asn`<br>`city` | ✓ |
 |[Ip-geo-API](https://github.com/realchandan/Ip-geo-API) | Go | In-memory API server | `country` | ✘ |
 |[IPInfoOffline](https://www.nirsoft.net/utils/ip_country_info_offline.html) | Windows  | Desktop tool showing information about IP addresses *(local data)* | `country`<br>`asn`<br>`city` | ✘ |
+|[ip-location-rs](https://github.com/neeythann/ip-location-rs) | Rust | A RESTful in-memory network information lookup API server | `country`<br>`asn` | ✘ |
 
 
 ## Useful tools
