@@ -3,6 +3,7 @@
 We could not keep the git histories because of the github limitation as #4.<br>
 Therefore, instead of git history, please refer to this CHANGELOG.
 
+- 2025-04-08: Added iplocate-country and iplocate-asn database #45
 - 2024-10-05: Added new geofeed providers (about 200)
 - 2024-09-13: Fixed country codes of geofeed providers which added at 2024-09-10 ZN, UK, FL #36 (geo-asn-country and geo-whois-asn-country)
 - 2024-09-10: Added new geofeed providers (about 1500)
