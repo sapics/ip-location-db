@@ -20,6 +20,7 @@ var run = function(){
 		var inputV6 = path.join(topDir, nonMmdbDir, nonMmdbDir + '-ipv6.csv')
 		var outputV4 = path.join(topDir, dir, nonMmdbDir + '-ipv4.mmdb')
 		var outputV6 = path.join(topDir, dir, nonMmdbDir + '-ipv6.mmdb')
+		var outputV46 = path.join(topDir, dir, nonMmdbDir + '.mmdb')
 		console.log(dir)
 		for(var recordSize of [24, 28]){
 			try{
@@ -27,6 +28,8 @@ var run = function(){
 					// uncompress .csv.gz files
 					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, nonMmdbDir) + ' ' + inputV4 + '.gz')
 					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, nonMmdbDir) + ' ' + inputV6 + '.gz')
+				} else {
+					execSync(mmdbCmd + ' -i ' + inputV4 + ' -i ' + inputV6 + ' -o ' + outputV46 + ' -r ' + recordSize)
 				}
 				execSync(mmdbCmd + ' -i ' + inputV4 + ' -o ' + outputV4 + ' -r ' + (dir.includes('dbip-city') ? 28 : recordSize))
 				execSync(mmdbCmd + ' -i ' + inputV6 + ' -o ' + outputV6 + ' -r ' + recordSize)
