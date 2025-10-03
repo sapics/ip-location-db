@@ -25,7 +25,7 @@ ip_range_start, ip_range_end, country_code
 ### City
 
 ```CSV
-ip_range_start, ip_range_end, country_code, city, state1, state2, postcode, latitude, longitude, timezone
+ip_range_start, ip_range_end, country_code, state1, state2, city, postcode, latitude, longitude, timezone
 ```
 
 | Database | Type | License | Updated | IPv4 | IPv6 | IPv4+IPV6 | IPv4-num | IPv6-num |
