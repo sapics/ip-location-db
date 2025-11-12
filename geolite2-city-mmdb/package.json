@@ -1,0 +1,29 @@
+{
+  "name": "@ip-location-db/geolite2-city-mmdb",
+  "version": "2.3.2025110818",
+  "description": "Ip to location database",
+  "keywords": [
+    "ip",
+    "ip-location",
+    "ip-location-db",
+    "ipv4",
+    "ipv6",
+    "location",
+    "city",
+    "country",
+    "mmdb"
+  ],
+  "license": "SEE LICENSE IN GEOLITE2_LICENSE AND GEOLITE2_EULA",
+  "author": "sapics",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sapics/ip-location-db.git"
+  },
+  "CUSTOME_FIELDS": {
+    "geolite2_hash_city": "f4a4c624512ef085feded9b74f5a797c1fedfae6c9a31d1a2c65462e23338d24"
+  }
+}
