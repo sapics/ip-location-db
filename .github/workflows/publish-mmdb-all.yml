@@ -1,0 +1,24 @@
+name: Publish all mmdb npm packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Publish mmdb files
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Publish to npm
+        run: tools/publish-mmdb.sh
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GTOKEN}}
+          PUBLISH_ALL_MMDB: true
