@@ -1,6 +1,6 @@
 # ip-location-db
 
-This project provides IP to location databases in CSV and MMDB formats.
+This project provides IP to location databases in CSV and MMDB formats since 2019.
 
 There are 3 types of IP database in this repository: `country`, `city` and `asn` files. All have their own standard format.
 
