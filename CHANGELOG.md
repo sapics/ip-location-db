@@ -3,6 +3,7 @@
 We could not keep the git histories because of the github limitation as #4.<br>
 Therefore, instead of git history, please refer to this CHANGELOG.
 
+- 2026-04-19: Introduced a cache database internally for source data to improve build stability
 - 2026-01-16: Remove iplocate-country and iplocate-asn database from daily-update list #58
 - 2025-04-08: Added iplocate-country and iplocate-asn database #45
 - 2024-10-05: Added new geofeed providers (about 200)
@@ -14,3 +15,4 @@ Therefore, instead of git history, please refer to this CHANGELOG.
 - 2023-05-17: Fixed overlapping ip ranges #17
 - 2023-02-23: Added asn types: asn, iptoasn-asn, dbip-asn, geolite2-asn #14
 - 2022-07-19: Added 7z compression type for city database #9
+- 2019-09-23: Project start
