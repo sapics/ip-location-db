@@ -1,0 +1,43 @@
+databases:
+  - name: "ASN-COUNTRY ipv4"
+    mmdb:
+      ipVersion: 4 # Note: IPv4 mmdb can only hold IPv4.
+      recordSize: 24 # One of 24, 28, 32. Start small, increase if it fails.
+    types: # Best to always use the same established keys as MaxMind.
+      "country_code": string
+    inputs: # Source data and their mapping.
+      # Inputs are processed as listed. Earlier entries are overwritten by later entries.
+      - file: "asn-country/asn-country-ipv4.csv"
+        fields: ["from", "to", "country_code"]
+    output: asn-country-mmdb/asn-country-ipv4.mmdb
+    optimize:
+      floatDecimals: 2 # Limit floats (eg. coordinates) to decimals for smaller DB size. (0=off, set to -1 to no decimals)
+      forceIPVersion: true # Check IPs and discard IPs with the wrong version. (IPv4 and live in IPv6 mmdb)
+      maxPrefix: 0 # Remove any network prefixes greater than maxPrefix for smaller DB size. (0=off)
+    merge:
+      conditionalResets: # Reset set of top level entries if another set is changed.
+        # Reset the location entry when the country is changed.
+        # If the new entry also has a location, it is kept, but a different country without location resets the location.
+        - ifChanged: ["country_code"]
+          reset: ["location"]
+  - name: "ASN-COUNTRY ipv6"
+    mmdb:
+      ipVersion: 6 # Note: IPv4 mmdb can only hold IPv4.
+      recordSize: 24 # One of 24, 28, 32. Start small, increase if it fails.
+    types: # Best to always use the same established keys as MaxMind.
+      "country_code": string
+    inputs: # Source data and their mapping.
+      # Inputs are processed as listed. Earlier entries are overwritten by later entries.
+      - file: "asn-country/asn-country-ipv6.csv"
+        fields: ["from", "to", "country_code"]
+    output: asn-country-mmdb/asn-country-ipv6.mmdb
+    optimize:
+      floatDecimals: 2 # Limit floats (eg. coordinates) to decimals for smaller DB size. (0=off, set to -1 to no decimals)
+      forceIPVersion: true # Check IPs and discard IPs with the wrong version. (IPv4 and live in IPv6 mmdb)
+      maxPrefix: 0 # Remove any network prefixes greater than maxPrefix for smaller DB size. (0=off)
+    merge:
+      conditionalResets: # Reset set of top level entries if another set is changed.
+        # Reset the location entry when the country is changed.
+        # If the new entry also has a location, it is kept, but a different country without location resets the location.
+        - ifChanged: ["country_code"]
+          reset: ["location"]

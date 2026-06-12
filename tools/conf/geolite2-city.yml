@@ -1,0 +1,57 @@
+databases:
+  - name: "GEOLITE2-CITY ipv4"
+    mmdb:
+      ipVersion: 4 # Note: IPv4 mmdb can only hold IPv4.
+      recordSize: 28 # One of 24, 28, 32. Start small, increase if it fails.
+    types: # Best to always use the same established keys as MaxMind.
+      "country_code": string
+      "state1": string
+      "state2": string
+      "city": string
+      "postcode": string
+      "latitude": string
+      "longitude": string
+      "timezone": string
+    inputs: # Source data and their mapping.
+      # Inputs are processed as listed. Earlier entries are overwritten by later entries.
+      - file: "geolite2-city/geolite2-city-ipv4.csv"
+        fields: ["from", "to", "country_code", "state1", "state2", "city", "postcode", "latitude", "longitude", "timezone"]
+    output: geolite2-city-mmdb/geolite2-city-ipv4.mmdb
+    optimize:
+      floatDecimals: 2 # Limit floats (eg. coordinates) to decimals for smaller DB size. (0=off, set to -1 to no decimals)
+      forceIPVersion: true # Check IPs and discard IPs with the wrong version. (IPv4 and live in IPv6 mmdb)
+      maxPrefix: 0 # Remove any network prefixes greater than maxPrefix for smaller DB size. (0=off)
+    merge:
+      conditionalResets: # Reset set of top level entries if another set is changed.
+        # Reset the location entry when the country is changed.
+        # If the new entry also has a location, it is kept, but a different country without location resets the location.
+        - ifChanged: ["country_code", "state1", "state2", "city", "postcode", "latitude", "longitude", "timezone"]
+          reset: ["location"]
+  - name: "GEOLITE2-CITY ipv6"
+    mmdb:
+      ipVersion: 6 # Note: IPv4 mmdb can only hold IPv4.
+      recordSize: 28 # One of 24, 28, 32. Start small, increase if it fails.
+    types: # Best to always use the same established keys as MaxMind.
+      "country_code": string
+      "state1": string
+      "state2": string
+      "city": string
+      "postcode": string
+      "latitude": string
+      "longitude": string
+      "timezone": string
+    inputs: # Source data and their mapping.
+      # Inputs are processed as listed. Earlier entries are overwritten by later entries.
+      - file: "geolite2-city/geolite2-city-ipv6.csv"
+        fields: ["from", "to", "country_code", "state1", "state2", "city", "postcode", "latitude", "longitude", "timezone"]
+    output: geolite2-city-mmdb/geolite2-city-ipv6.mmdb
+    optimize:
+      floatDecimals: 2 # Limit floats (eg. coordinates) to decimals for smaller DB size. (0=off, set to -1 to no decimals)
+      forceIPVersion: true # Check IPs and discard IPs with the wrong version. (IPv4 and live in IPv6 mmdb)
+      maxPrefix: 0 # Remove any network prefixes greater than maxPrefix for smaller DB size. (0=off)
+    merge:
+      conditionalResets: # Reset set of top level entries if another set is changed.
+        # Reset the location entry when the country is changed.
+        # If the new entry also has a location, it is kept, but a different country without location resets the location.
+        - ifChanged: ["country_code", "state1", "state2", "city", "postcode", "latitude", "longitude", "timezone"]
+          reset: ["location"]
