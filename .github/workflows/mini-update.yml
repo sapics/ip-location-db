@@ -1,0 +1,92 @@
+name: src-update
+on:
+#  schedule:
+#    - cron: '55 18 * * *'
+  workflow_dispatch:
+
+permissions: write-all
+jobs:
+  release:
+    name: Update database
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+        with:
+          token: ${{secrets.GTOKEN}}
+          ref: main-test
+          
+      - name: checkout src
+        uses: actions/checkout@v6
+        with:
+          repository: sapics/ip-location-mini-src
+          path: src
+          token: ${{secrets.GTOKEN}}
+          
+      - name: checkout cache
+        uses: actions/checkout@v6
+        with:
+          repository: sapics/ip-location-mini-cache
+          path: src/cache
+          token: ${{secrets.GTOKEN}}
+          
+      - name: checkout bgp
+        uses: actions/checkout@v6
+        with:
+          repository: sapics/ip-location-mini-bgp
+          path: src/bgp
+          token: ${{secrets.GTOKEN}}
+          
+      - name: setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.15"
+          registry-url: 'https://registry.npmjs.org'
+          
+      - name: update
+        run: src/scripts/main-update.sh
+        
+      - name: Download ip-location-to-mmdb
+        shell: bash
+        run: |
+          wget https://github.com/paul-norman/ip-location-to-mmdb/releases/download/v1.04/ip-location-to-mmdb-linux-x64.bin -q -O ./ip-location-to-mmdb-linux-x64.bin
+          chmod +x ./ip-location-to-mmdb-linux-x64.bin
+          
+      - name: Update mmdb files
+        shell: bash
+        run: node tools/create-mmdb2.js
+        
+      - name: commit
+        run: ./tools/commit.sh
+        env:
+          GITHUB_TOKEN: ${{secrets.GTOKEN}}
+
+      # Push changes first to ensure the remote repository is up-to-date
+      - name: push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.GTOKEN}}
+          repository: sapics/ip-location-db
+          branch: main-test
+
+      - name: Get current time
+        uses: josStorer/get-current-time@v2
+        id: current-time
+        with:
+          format: "YYYY-MM-DD HH:mm:ss"
+          
+      # Finally, create a release targeting the newly pushed commit
+      - name: release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: latest
+          name: "Latest Release"
+          body: "Latest updates: ${{ steps.current-time.outputs.formattedTime }} (UTC)"
+          files: |
+            */*.csv
+            */*.csv.7z
+            */*.csv.gz
+            */*.mmdb
+        env:
+          GITHUB_TOKEN: ${{secrets.GTOKEN}}
