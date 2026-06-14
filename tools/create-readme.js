@@ -22,7 +22,21 @@ function mergeTemplates(templates, vars) {
 			templateContent = fs.readFileSync(templatePath, { encoding: 'utf8' });
 		} else {
 			var info = templatePath.split('-')
-			templateContent = '# [ip-location-db](https://github.com/sapics/ip-location-db)/' + path.basename(templatePath) + '\n\n'
+			templateContent = [
+'> [!CAUTION]',
+'> **🚨 CRITICAL NOTICE: Data Bugs & Migration**',
+'> ',
+'> Please be aware that the current data published to `npm` and the `main` branch **contains bugs resulting in incorrect data**.',
+'> ',
+'> To immediately resolve these data accuracy and compliance issues, **updates via `npm` are completely deprecated and will stop.**',
+'> ',
+'> The corrected data and new, compliant generation logic are already available in the **[`main-test`](https://github.com/sapics/ip-location-db/tree/main-test)** branch.',
+'> We will be completely replacing the `main` branch with this structure very soon.',
+'> ',
+'> **Action Required:** We strongly urge all users to switch immediately to avoid using incorrect data.',
+'> Please update your systems to download the latest data directly from our [GitHub Releases](https://github.com/sapics/ip-location-db/releases).'
+].join('\n') + '\n\n\n';
+			templateContent += '# [ip-location-db](https://github.com/sapics/ip-location-db)/' + path.basename(templatePath) + '\n\n'
 			var type = info[info.length - 1]
 			var isMmdb = false
 			if(type === 'mmdb'){
