@@ -18,8 +18,6 @@ This project provides IP to location databases in CSV and MMDB formats since 201
 There are 3 types of IP database in this repository: `country`, `city` and `asn` files. All have their own standard format.
 
 
-To ensure you are using accurate data, we will immediately transition our distribution method. Updates via npm are now deprecated and will stop. Please update your download URLs and scripts to fetch the latest data directly from GitHub Releases.
-
 ### Country
 
 ${format-country-csv}

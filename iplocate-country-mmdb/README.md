@@ -1,3 +1,17 @@
+> [!CAUTION]
+> **🚨 CRITICAL NOTICE: Data Bugs & Migration**
+> 
+> Please be aware that the current data published to `npm` and the `main` branch **contains bugs resulting in incorrect data**.
+> 
+> To immediately resolve these data accuracy and compliance issues, **updates via `npm` are completely deprecated and will stop.**
+> 
+> The corrected data and new, compliant generation logic are already available in the **[`main-test`](https://github.com/sapics/ip-location-db/tree/main-test)** branch.
+> We will be completely replacing the `main` branch with this structure very soon.
+> 
+> **Action Required:** We strongly urge all users to switch immediately to avoid using incorrect data.
+> Please update your systems to download the latest data directly from our [GitHub Releases](https://github.com/sapics/ip-location-db/releases).
+
+
 # [ip-location-db](https://github.com/sapics/ip-location-db)/iplocate-country-mmdb
 
 ## Download
