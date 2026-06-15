@@ -1,7 +1,7 @@
 name: src-update
 on:
-#  schedule:
-#    - cron: '55 18 * * *'
+  schedule:
+    - cron: '55 18 * * *'
   workflow_dispatch:
 
 permissions: write-all
@@ -14,7 +14,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6
         with:
-          token: ${{secrets.GTOKEN}}
+          token: ${{secrets.GH_TOKEN}}
           ref: main-test
           
       - name: checkout src
@@ -22,21 +22,21 @@ jobs:
         with:
           repository: sapics/ip-location-mini-src
           path: src
-          token: ${{secrets.GTOKEN}}
+          token: ${{secrets.GH_TOKEN}}
           
       - name: checkout cache
         uses: actions/checkout@v6
         with:
           repository: sapics/ip-location-mini-cache
           path: src/cache
-          token: ${{secrets.GTOKEN}}
+          token: ${{secrets.GH_TOKEN}}
           
       - name: checkout bgp
         uses: actions/checkout@v6
         with:
           repository: sapics/ip-location-mini-bgp
           path: src/bgp
-          token: ${{secrets.GTOKEN}}
+          token: ${{secrets.GH_TOKEN}}
           
       - name: setup node
         uses: actions/setup-node@v6
@@ -60,13 +60,13 @@ jobs:
       - name: commit
         run: ./tools/commit.sh
         env:
-          GITHUB_TOKEN: ${{secrets.GTOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
       # Push changes first to ensure the remote repository is up-to-date
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{secrets.GTOKEN}}
+          github_token: ${{secrets.GH_TOKEN}}
           repository: sapics/ip-location-db
           branch: main-test
 
@@ -89,4 +89,4 @@ jobs:
             */*.csv.gz
             */*.mmdb
         env:
-          GITHUB_TOKEN: ${{secrets.GTOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
