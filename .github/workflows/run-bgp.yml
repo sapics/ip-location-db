@@ -1,0 +1,30 @@
+name: bgp-update
+on:
+  schedule:
+    - cron: '17 17 * * *'
+  workflow_dispatch:
+
+permissions: write-all
+jobs:
+  release:
+    name: Update database
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: checkout bgp
+        uses: actions/checkout@v6
+        with:
+          repository: sapics/ip-location-mini-bgp
+          token: ${{secrets.GH_TOKEN}}
+      - name: setup go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: verify module context
+        run: |
+          go env GOMOD GO111MODULE GOWORK
+          go build ./...
+      - name: update
+        run: bash ./daily-run.sh
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}

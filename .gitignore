@@ -1,0 +1,24 @@
+# Logs
+logs
+*.log
+
+# mac files
+.DS_Store
+
+# vim swap files
+*.swp
+
+# webstorm
+.idea
+
+# vscode
+.vscode
+*code-workspace
+
+*.mmdb
+*.gz
+*.7z
+/geolite2-city/*.csv
+/dbip-city/*.csv
+/iptoasn-asn/*.csv
+/iptoasn-country/*.csv
