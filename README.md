@@ -48,7 +48,7 @@ ip_range_start, ip_range_end, autonomous_system_number, autonomous_system_organi
 
 ## Databases referenced in this project
 
-### Original Databases [Update: Daily]
+### Original Databases [Update: Daily] [Free for commercial & personal use, No attribution required]
 
 All databases licensed under [CDLA Permissive 2.0](https://cdla.dev/permissive-2-0/) are created by this project and updated daily.
 
@@ -72,11 +72,13 @@ We leverage global BGP routing data, including RIB (Routing Information Base) du
 This project integrates geolocation data and related network attributes from various `geofeeds` published independently by network operators worldwide according to RFC 8805 / RFC 9632.
 * **Note:** By their nature, geofeed files are intended for general public use, so we believe there is no issue in utilizing them. However, since many of them lack explicitly defined licenses, we utilize this data "as is" to compile our dataset.
 
+
 #### Compliance & Data Handling Policy
 
 To ensure adherence to the Acceptable Use Policies (AUP) of our data providers and to maintain the integrity of our CDLA-Permissive-2.0 license, we explicitly **DO NOT** use RIR WHOIS or IRR database attributes (such as `inetnum`, `route`, `country`, `geoloc`, or physical address fields) to directly map IP addresses to geographic locations. 
 
 Doing so would directly violate the explicit terms of several Regional Internet Registries. For example, the [APNIC Whois Database Acceptable Use Agreement](https://www.apnic.net/manage-ip/using-whois/bulk-access/copyright/) strictly states: *"you cannot use the database to map IP address to geographic location."* By avoiding these restricted datasets and relying strictly on open routing records and voluntarily published geofeeds, we aim to keep this dataset compliant and as safe as possible for public use.
+
 
 #### Differences between `user-country` and `server-country` databases
 
@@ -88,7 +90,7 @@ While both databases return almost identical results in most instances, we highl
 
 
 
-### [IPtoASN](https://iptoasn.com/) database [Update: Hourly]
+### [IPtoASN](https://iptoasn.com/) database [Update: Hourly] [Free for commercial & personal use, No attribution required]
 
 You can download hourly updated database in tsv format from [original site](https://iptoasn.com/).
 This is licensed under a [Public Domain Dedication and License v1.0](https://opendatacommons.org/licenses/pddl/1.0/).
