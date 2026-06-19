@@ -1,7 +1,8 @@
 # ip-location-db
 
 This project provides IP to location databases in CSV and MMDB formats since 2019.
-As of June 18, 2026, we have revised our distribution method for [GitHub Releases](https://github.com/sapics/ip-location-db/releases/tag/latest). Please update your URLs accordingly.
+
+⚠️ As of June 18, 2026, we have revised our distribution method for [GitHub Releases](https://github.com/sapics/ip-location-db/releases/tag/latest). Please update your URLs accordingly.
 
 There are 3 types of IP database in this repository: `country`, `city` and `asn` files. All have their own standard format.
 
