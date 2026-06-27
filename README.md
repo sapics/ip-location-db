@@ -52,7 +52,7 @@ ip_range_start, ip_range_end, autonomous_system_number, autonomous_system_organi
 
 ### Original Databases [Update: Daily]
 
-`user-country`, `server-country`, and `origin-asn` are published under the [PDDL](https://opendatacommons.org/licenses/pddl/1.0/) (**free use without attribution**).
+`user-country`, `server-country`, and `origin-asn` are published under the [Public Domain Dedication and License v1.0](https://opendatacommons.org/licenses/pddl/1.0/) (PDDL) (**free use without attribution**).
 
 These datasets are compiled from raw, public network data. We aim to use sources free of commercial or redistribution restrictions to maintain this permissive licensing.
 
