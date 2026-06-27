@@ -5,9 +5,10 @@ Therefore, instead of git history, please refer to this CHANGELOG.
 
 ## Major Updates (2026-06-18)
 - Migrated data distribution to [GitHub Releases](https://github.com/sapics/ip-location-db/releases/tag/latest) to bypass git file size limitations
+  - Some databases were stopped updating by size limitations in legacy version
 - Rewrote the database generation program from scratch
 - Stopped extracting IP, location, and country information from Whois databases to comply with RIR Acceptable Use Policies
-- Changed license to CDLA-Permissive-2.0 to provide AS-IS protection for unclear licensed data like geofeeds, while maintaining attribution-free usage
+- Changed license to PDDL to provide AS-IS protection for unclear licensed data like geofeeds, while maintaining attribution-free usage
 
 ## Legacy Updates
 - 2026-04-26: Added functionality to correct or remove inaccurate geofeed data
