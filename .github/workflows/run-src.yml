@@ -9,7 +9,7 @@ jobs:
   release:
     name: Update database
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 300
     steps:
       - name: checkout
         uses: actions/checkout@v6
