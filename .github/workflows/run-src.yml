@@ -82,11 +82,54 @@ jobs:
         with:
           tag_name: latest
           name: "Latest Release"
-          body: "Latest updates: ${{ steps.current-time.outputs.formattedTime }} (UTC)"
+          body: |
+            Latest updates: ${{ steps.current-time.outputs.formattedTime }} (UTC)
+
+            SHA-256 checksum files are available in the [Checksum Release](https://github.com/sapics/ip-location-db/releases/tag/checksum).
+
+            To get the checksum URL, replace `/download/latest/` with `/download/checksum/` and append `.sha256` to the filename.
+
+            - File: [https://github.com/sapics/ip-location-db/releases/download/latest/user-country-ipv4.csv](https://github.com/sapics/ip-location-db/releases/download/latest/user-country-ipv4.csv)
+            - SHA-256: [https://github.com/sapics/ip-location-db/releases/download/checksum/user-country-ipv4.csv.sha256](https://github.com/sapics/ip-location-db/releases/download/checksum/user-country-ipv4.csv.sha256)
           files: |
             */*.csv
             */*.csv.7z
             */*.csv.gz
             */*.mmdb
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+
+      - name: Create checksum files
+        shell: bash
+        run: |
+          for file in */*.csv */*.csv.7z */*.csv.gz */*.mmdb; do
+            if [[ ! -f "$file" ]]; then
+              continue
+            fi
+
+            directory=$(dirname "$file")
+            filename=$(basename "$file")
+            (
+              cd "$directory"
+              sha256sum "$filename" > "$filename.sha256"
+            )
+          done
+
+      - name: checksum release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: checksum
+          name: "Checksum"
+          body: |
+            SHA-256 checksums for the [Latest Release](https://github.com/sapics/ip-location-db/releases/tag/latest).
+
+            Latest updates: ${{ steps.current-time.outputs.formattedTime }} (UTC)
+          make_latest: false
+          overwrite_files: true
+          files: |
+            */*.csv.sha256
+            */*.csv.7z.sha256
+            */*.csv.gz.sha256
+            */*.mmdb.sha256
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}

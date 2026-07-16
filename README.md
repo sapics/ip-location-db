@@ -48,6 +48,16 @@ ip_range_start, ip_range_end, autonomous_system_number, autonomous_system_organi
 | [IPtoASN](https://github.com/sapics/ip-location-db/tree/main/iptoasn-asn/) | [PDDL](https://opendatacommons.org/licenses/pddl/1-0/) | Daily | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv4.csv)<br>[MMDB](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv4.mmdb) | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv6.csv)<br>[MMDB](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv6.mmdb) | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn.csv)<br>[MMDB](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn.mmdb) | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv4-num.csv) | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv6-num.csv) | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv4-cidr.csv) | [CSV](https://github.com/sapics/ip-location-db/releases/download/latest/iptoasn-asn-ipv6-cidr.csv) |
 
 
+### Checksums
+
+SHA-256 checksum files for all release assets are available in the [Checksum Release](https://github.com/sapics/ip-location-db/releases/tag/checksum).
+
+To get the checksum URL for a file, replace `/download/latest/` with `/download/checksum/` and append `.sha256` to the filename.
+
+- File: [https://github.com/sapics/ip-location-db/releases/download/latest/user-country-ipv4.csv](https://github.com/sapics/ip-location-db/releases/download/latest/user-country-ipv4.csv)
+- SHA-256: [https://github.com/sapics/ip-location-db/releases/download/checksum/user-country-ipv4.csv.sha256](https://github.com/sapics/ip-location-db/releases/download/checksum/user-country-ipv4.csv.sha256)
+
+
 ## Databases referenced in this project
 
 ### Original Databases [Update: Daily]
