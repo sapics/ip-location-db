@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const execSync = require('child_process').execSync
+const {execSync, execFileSync} = require('child_process')
 const isWin = process.platform === 'win32'
 const topDir = path.resolve(__dirname, '..')
 const mmdbCmd = path.join(topDir, 'ip-location-to-mmdb-' + (isWin ? 'windows-x64.exe' : 'linux-x64.bin'))
@@ -26,13 +26,13 @@ var run = function(){
 			try{
 				if(dir.includes('-city')){
 					// uncompress .csv.gz files
-					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, nonMmdbDir) + ' ' + inputV4 + '.gz')
-					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, nonMmdbDir) + ' ' + inputV6 + '.gz')
+					execFileSync('7z', ['e', '-aoa', '-bd', '-bso0', '-bsp0', '-o' + path.join(topDir, nonMmdbDir), inputV4 + '.gz'])
+					execFileSync('7z', ['e', '-aoa', '-bd', '-bso0', '-bsp0', '-o' + path.join(topDir, nonMmdbDir), inputV6 + '.gz'])
 				} else {
-					execSync(mmdbCmd + ' -i ' + inputV4 + ' -i ' + inputV6 + ' -o ' + outputV46 + ' -r ' + recordSize)
+					execFileSync(mmdbCmd, ['-i', inputV4, '-i', inputV6, '-o', outputV46, '-r', recordSize])
 				}
-				execSync(mmdbCmd + ' -i ' + inputV4 + ' -o ' + outputV4 + ' -r ' + (dir.includes('dbip-city') ? 28 : recordSize))
-				execSync(mmdbCmd + ' -i ' + inputV6 + ' -o ' + outputV6 + ' -r ' + recordSize)
+				execFileSync(mmdbCmd, ['-i', inputV4, '-o', outputV4, '-r', (dir.includes('dbip-city') ? 28 : recordSize)])
+				execFileSync(mmdbCmd, ['-i', inputV6, '-o', outputV6, '-r', recordSize])
 				if(dir.includes('-city')){
 					fs.unlinkSync(path.join(topDir, nonMmdbDir, nonMmdbDir + '-ipv4.csv'))
 					fs.unlinkSync(path.join(topDir, nonMmdbDir, nonMmdbDir + '-ipv6.csv'))
