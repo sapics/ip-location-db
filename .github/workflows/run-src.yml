@@ -30,6 +30,7 @@ jobs:
           repository: sapics/ip-location-mini-cache
           path: src/cache
           token: ${{secrets.GH_TOKEN}}
+          fetch-depth: 2
           
       - name: checkout bgp
         uses: actions/checkout@v6
