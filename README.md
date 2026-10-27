@@ -167,6 +167,8 @@ Because the ipv6 range is too wide, the measurements here are limited to ipv4 re
 
 If you would like to integrate MMDB files into an existing project there are several libraries that can help.
 
+The country and ASN MMDB files use MaxMind's GeoLite2 record layout (`country.iso_code`, `autonomous_system_number`), so software written for GeoLite2 files can read them without changes. The `country_code` key is deprecated, read `country.iso_code` instead. City MMDB files keep their own layout.
+
 
 ### Read MMDB files
 

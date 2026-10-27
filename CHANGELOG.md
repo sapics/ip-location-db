@@ -11,6 +11,7 @@ Therefore, instead of git history, please refer to this CHANGELOG.
 - Changed license to PDDL to provide AS-IS protection for unclear licensed data like geofeeds, while maintaining attribution-free usage
 
 ## Legacy Updates
+- 2026-10-27: Country and ASN MMDB files add MaxMind's GeoLite2 record layout alongside the existing keys, and name the source in their metadata
 - 2026-04-26: Added functionality to correct or remove inaccurate geofeed data
 - 2026-04-19: Introduced a cache database internally for source data to improve build stability
 - 2026-01-16: Remove iplocate-country and iplocate-asn database from daily-update list [#58](https://github.com/sapics/ip-location-db/issues/58)
