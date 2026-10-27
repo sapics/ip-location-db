@@ -23,6 +23,7 @@ var run = function(){
 			}
 		}
 		console.log(dir)
+		var geoip2 = dir.includes('-city') ? '' : ' -geoip2 -description "ip-location-db - ' + dir + '"'
 		for(var recordSize of [24, 28]){
 			if(recordSize === 24 && dir.includes('dbip-city')) continue;
 			try{
@@ -31,10 +32,10 @@ var run = function(){
 					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, dir) + ' ' + inputV4 + '.gz')
 					execSync('7z e -aoa -bd -bso0 -bsp0 -o' + path.join(topDir, dir) + ' ' + inputV6 + '.gz')
 				} else {
-					execSync(mmdbCmd + ' -i ' + inputV4 + ' -i ' + inputV6 + ' -o ' + outputV46 + ' -r ' + recordSize)
+					execSync(mmdbCmd + geoip2 + ' -i ' + inputV4 + ' -i ' + inputV6 + ' -o ' + outputV46 + ' -r ' + recordSize)
 				}
-				execSync(mmdbCmd + ' -i ' + inputV4 + ' -o ' + outputV4 + ' -r ' + recordSize)
-				execSync(mmdbCmd + ' -i ' + inputV6 + ' -o ' + outputV6 + ' -r ' + recordSize)
+				execSync(mmdbCmd + geoip2 + ' -i ' + inputV4 + ' -o ' + outputV4 + ' -r ' + recordSize)
+				execSync(mmdbCmd + geoip2 + ' -i ' + inputV6 + ' -o ' + outputV6 + ' -r ' + recordSize)
 			}catch(e){
 				console.warn(e)
 				if(dir.includes('-city')){

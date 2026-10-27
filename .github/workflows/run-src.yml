@@ -51,7 +51,7 @@ jobs:
       - name: Download ip-location-to-mmdb
         shell: bash
         run: |
-          wget https://github.com/paul-norman/ip-location-to-mmdb/releases/download/v1.04/ip-location-to-mmdb-linux-x64.bin -q -O ./ip-location-to-mmdb-linux-x64.bin
+          wget https://github.com/paul-norman/ip-location-to-mmdb/releases/download/v1.05/ip-location-to-mmdb-linux-x64.bin -q -O ./ip-location-to-mmdb-linux-x64.bin
           chmod +x ./ip-location-to-mmdb-linux-x64.bin
           
       - name: Update mmdb files
